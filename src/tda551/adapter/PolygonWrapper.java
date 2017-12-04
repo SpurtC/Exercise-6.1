@@ -1,8 +1,9 @@
 package tda551.adapter;
 
 import tda551.shapes.Polygon;
+import tda551.shapes.Point;
 
-import java.awt.*;
+import java.awt.Graphics;
 
 /* package-private */ class PolygonWrapper implements IPolygon {
     private Polygon wrappedPolygon;
@@ -20,7 +21,7 @@ import java.awt.*;
     @Override
     public void updateCenter(int newX, int newY) {
         Point oldCenter = wrappedPolygon.getCenterPoint();
-        wrappedPolygon.translate(newX - oldCenter.x, newY - oldCenter.y);
+        wrappedPolygon.translate(newX - oldCenter.getX(), newY - oldCenter.getY());
     }
 
     @Override

@@ -8,7 +8,6 @@ public abstract class Shape extends JComponent {
     private int scaleX = 10;
     private int scaleY = 10;
     private double rotation = 0; // Degrees clockwise
-
     public Point getCenterPoint() {
         return centerPoint;
     }
@@ -34,7 +33,7 @@ public abstract class Shape extends JComponent {
     }
 
     public void translate(int x, int y) {
-        centerPoint.move(centerPoint.x + x, centerPoint.y + y);
+        centerPoint = centerPoint.move(centerPoint.getX() + x, centerPoint.getY() + y);
     }
 
     public void scale(int x, int y) {

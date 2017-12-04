@@ -1,6 +1,7 @@
 package tda551.adapter;
 
-import java.awt.*;
+import java.awt.Graphics;
+import tda551.shapes.Point;
 
 public interface IPolygon {
     void paint(Graphics g);

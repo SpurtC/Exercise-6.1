@@ -26,7 +26,7 @@ public class PolygonModel extends JComponent {
 
     public void translate(int x, int y) {
         for (IPolygon p : polygons) {
-            p.updateCenter(p.getCenter().x + x, p.getCenter().y + y);
+            p.updateCenter(p.getCenter().getX() + x, p.getCenter().getY() + y);
         }
     }
 

@@ -17,7 +17,7 @@ public abstract class Polygon extends Shape {
         Point from = null;
         for (Point to : corners) {
             if (from != null) {
-                g.drawLine(from.x, from.y, to.x, to.y);
+                g.drawLine(from.getX(), from.getY(), to.getX(), to.getY());
             }
             from = to;
         }
@@ -53,12 +53,13 @@ public abstract class Polygon extends Shape {
     }
 
     private Point movePoint(Point center, int[] offset) {
-        return new Point(center.x + offset[0], center.y + offset[1]);
+        return new Point(center.getX() + offset[0], center.getY() + offset[1]);
     }
 
     private Point rotatePoint(Point center, double alpha, Point newCorner) {
-        double newX = center.x + (newCorner.x - center.x) * Math.cos(alpha) - (newCorner.y - center.y) * Math.sin(alpha);
-        double newY = center.y + (newCorner.x - center.x) * Math.sin(alpha) + (newCorner.y - center.y) * Math.cos(alpha);
+        double newX = center.getX() + (newCorner.getX() - center.getX()) * Math.cos(alpha) - (newCorner.getY() - center.getY()) * Math.sin(alpha);
+        double newY = center.getY() + (newCorner.getX() - center.getX()) * Math.sin(alpha) + (newCorner.getY() - center.getY()) * Math.cos(alpha);
         return new Point((int) newX, (int) newY);
     }
 }
+
